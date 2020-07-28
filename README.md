@@ -1,8 +1,9 @@
 # Expectation-Maximization (EM) algorithm
 ## 1-dimensional simple case
 
+![fig](https://user-images.githubusercontent.com/66007586/88651730-47839b80-d0ca-11ea-9b78-0e24f9e0fdeb.png)
 
-What's the objective: given two populations of numbers drawn from 2 gaussian distributions, estimate the 2 gaussian parameters (means and the variances).  
+What's the **objective**: given two populations of numbers drawn from 2 gaussian distributions, estimate the 2 gaussian parameters (means and the variances).  
 
 Let's see how this works.
 
@@ -17,7 +18,7 @@ If we knew which numbers belongs to which distribution, we could easily estimate
 
 for the set (x_1, x_2, ..., x_nb) of the blue distribution and similarly for the red distribution. Then we are happy and completed the task. 
 
-But let's say we don't know which numbers belong to which distribution. Then the problem looks challenging. However, let's assume we have an initial guess of the distribution parameters (means and variances). Then for each point x_i in our dataset we could calculate the probability b_i of that point belonging to the blue (Px_i|b) distribution, by using the Bayes Theorem:
+But let's say we don't know which numbers belong to which distribution. Then the problem looks challenging. However, let's assume we have an initial guess of the distribution parameters (means and variances). Then for each point x_i in our dataset we could calculate the probability b_i of that point belonging to the blue (Px_i|b) distribution, by using the **Bayes Theorem**:
 
 ![eq3](https://latex.codecogs.com/gif.latex?%5Cfn_cm%20%5Clarge%20b_i%20%3D%20P%28b%7Cx_i%29%20%3D%20%5Cfrac%7BP%28x_i%7Cb%29P%28b%29%7D%7BP%28x_i%7Cb%29P%28b%29&plus;P%28x_i%7Cr%29P%28r%29%7D)
 
@@ -33,5 +34,5 @@ The next step is to re-estimate the means (and the variances) of the two distrib
 ![eq6](https://latex.codecogs.com/gif.latex?%5Cfn_cm%20%5Clarge%20%5Csigma%5E2_b%20%3D%20%5Cfrac%7Bb_1%28x_1-%5Cmu_b%29%5E2%20&plus;%20b_2%28x_2-%5Cmu_b%29%5E2%20&plus;%20...%20&plus;%20b_n%28x_n-%5Cmu_b%29%5E2%7D%7Bb_1%20&plus;%20b_2%20&plus;%20...%20&plus;%20b_n%7D)
 
 and similarly for the red parameters. 
-The procedure can be iterated again by calculating at each step the new b_i's and r_i's using the parameters of the previous iteration and estimating the new parameters. Eventually, after some iterations the new parameters will converge to some final values. These will be our final estimates of the distribution paramters. 
+The procedure can be iterated again by calculating at each step the new b_i's and r_i's using the parameters of the previous iteration and estimating the new parameters. Eventually, after some iterations the new parameters will converge to some final values. **These will be our final estimates of the distribution paramters.** 
 
